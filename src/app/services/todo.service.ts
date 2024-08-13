@@ -11,7 +11,7 @@ export class TodoService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getJson(): Observable<any>{
+  public getJson(): Observable<Items[]>{
     return this.httpClient.get<Items[]>("../assets/db.json");
   }
 
