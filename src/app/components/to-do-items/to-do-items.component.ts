@@ -14,7 +14,9 @@ import { Items } from '../../models/items.model';
 })
 export class ToDoItemsComponent {
 
+  // empty to do list array
   toDoList: Items[] = []
+
   constructor(private itemService : TodoService){
     
   }
