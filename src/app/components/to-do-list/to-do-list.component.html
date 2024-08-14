@@ -1,1 +1,2 @@
-<app-to-do-items></app-to-do-items>
+<!-- with using async it automatically subscribes to the obervable so it gets all of the changes  -->
+<app-to-do-items *ngFor="let item of toDoList | async" [item]="item"></app-to-do-items>

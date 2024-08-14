@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToDoListComponent } from '../components/to-do-list/to-do-list.component';
+import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 import { Routes, RouterModule } from '@angular/router';
+import { routes } from './app.routes'
 
-
-export const routes: Routes = [
-  {
-    path: '',
-    component: ToDoListComponent
-  }
-]
+// export const routes: Routes = [
+//   {
+//     path: '',
+//     component: ToDoListComponent
+//   }
+// ]
 
 @NgModule({
   declarations: [],
