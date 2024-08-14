@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToDoItemsComponent } from '../to-do-item/to-do-items.component';
+import { ToDoItemsComponent } from '../to-do-item/to-do-item.component';
 import { Observable } from 'rxjs';
 import { Item } from '../../models/item.model';
 import { TodoService } from '../../services/todo.service';

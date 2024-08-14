@@ -8,8 +8,8 @@ import { Item } from '../../models/item.model';
   selector: 'app-to-do-items',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './to-do-items.component.html',
-  styleUrl: './to-do-items.component.scss'
+  templateUrl: './to-do-item.component.html',
+  styleUrl: './to-do-item.component.scss'
 })
 export class ToDoItemsComponent {
 
