@@ -11,7 +11,7 @@ import { Item } from '../../models/item.model';
   templateUrl: './to-do-item.component.html',
   styleUrl: './to-do-item.component.scss'
 })
-export class ToDoItemsComponent {
+export class ToDoItemComponent {
 
   @Input() item!: Item;
 

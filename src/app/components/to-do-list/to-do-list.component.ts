@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToDoItemsComponent } from '../to-do-item/to-do-item.component';
+import { ToDoItemComponent } from '../to-do-item/to-do-item.component';
 import { Observable } from 'rxjs';
 import { Item } from '../../models/item.model';
 import { TodoService } from '../../services/todo.service';
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-to-do-list',
   standalone: true,
-  imports: [CommonModule, ToDoItemsComponent],
+  imports: [CommonModule, ToDoItemComponent],
   templateUrl: './to-do-list.component.html',
   styleUrl: './to-do-list.component.scss'
 })
