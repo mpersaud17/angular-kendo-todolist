@@ -1,0 +1,42 @@
+.title {
+  text-align: center;
+  color: red;
+}
+
+#addTaskForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px 0;
+
+  label {
+    padding-bottom: 10px;
+  }
+
+  input[kendoTextBox] {
+    padding-bottom: 50px;
+  }
+
+  kendo-datepicker{
+    padding-top: 10px;
+
+  }
+}
+
+#addTaskButton {
+  max-width: 500px; /* Set the maximum width */
+  width: 100%; /* Ensure it occupies full width up to the max-width */
+  margin: 10px auto;
+  padding: 10px;
+  border-color: #007bff;
+  display: block; /* Ensures the button is treated as a block-level element */
+  text-align: center; /* Center the button text */
+}
+
+// .kendo-dialog{
+//     padding: 50px;
+// }
+
+#addTaskForm.label {
+  color: red;
+}

@@ -5,7 +5,7 @@ import { Item } from '../../models/item.model';
 import { TodoService } from '../../services/todo.service';
 import { CommonModule, formatDate } from '@angular/common';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 
 
@@ -33,7 +33,7 @@ export class ToDoListComponent {
   ) {
     this.toDoList = this.todoService.getItems(); // Directly assign the observable
     this.taskForm = this.formBuilder.group({
-      taskName: [''], // Task name defaults to empty string
+      taskName: ['', Validators.required], // Task name defaults to empty string
       dueDate:[''] // Due Date defaults to empty string
     });
   }
@@ -53,10 +53,13 @@ export class ToDoListComponent {
       id: Date.now(),
       dueDate: formatDate(this.taskForm.get('dueDate')?.value, 'MM/dd/yyyy', 'en'),
       taskName: this.taskForm.get('taskName')?.value,
+      completed: false
     };
 
     this.todoService.addItems(newTask);
 
     this.closeAddTaskDialog();
   }
+
+
 }

@@ -2,28 +2,20 @@
 <app-to-do-items
   *ngFor="let item of toDoList | async"
   [item]="item"
-></app-to-do-items>
+>
+</app-to-do-items>
 
 <!-- Button to add a task -->
-<button kendoButton (click)="openAddTaskDialog()">Add Task</button>
+<button id="addTaskButton" kendoButton (click)="openAddTaskDialog()">Add Task</button>
 
 <!-- Kendo Dialog for Adding a Task -->
 <kendo-dialog *ngIf="isAddTaskDialogOpen" (close)="closeAddTaskDialog()">
-  <kendo-dialog-titlebar> Add New Task </kendo-dialog-titlebar>
+  <kendo-dialog-titlebar class="title"> Add New Task </kendo-dialog-titlebar>
 
-  <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+  <form id ="addTaskForm"[formGroup]="taskForm" (ngSubmit)="addTask()">
     <label for="taskName">Task Name:</label>
-    <input
-      kendoTextBox
-      id="taskName"
-      formControlName="taskName"
-      placeholder="Enter task name"
-      required
-    />
-    <kendo-datepicker
-      placeholder="Choose a date ..."
-      formControlName="dueDate"
-    ></kendo-datepicker>
+    <input kendoTextBox id="taskName" formControlName="taskName" placeholder="Enter task name" required />
+    <kendo-datepicker placeholder="Choose a date ..." formControlName="dueDate"></kendo-datepicker>
     <button kendoButton type="submit" [disabled]="taskForm.invalid">Add</button>
   </form>
 </kendo-dialog>
