@@ -14,6 +14,5 @@ import { Item } from '../../models/item.model';
 export class ToDoItemComponent {
 
   @Input() item!: Item;
-
   
 }

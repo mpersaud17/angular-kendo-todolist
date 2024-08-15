@@ -18,8 +18,9 @@ export class TodoService {
   }
 
   public addItems(newTask: Item): void {
-    let  newArray = [...data, newTask];
-    this.itemsSubject.next(newArray);
+    this.itemsSubject.next([...data, newTask]);
+    console.log(newTask)
+    this.itemsSubject.forEach(data=> console.log(data))
     // return this.itemsSubject;
   }
 
