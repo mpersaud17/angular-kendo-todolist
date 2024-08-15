@@ -1,2 +1,15 @@
 <!-- with using async it automatically subscribes to the obervable so it gets all of the changes  -->
 <app-to-do-items *ngFor="let item of toDoList | async" [item]="item"></app-to-do-items>
+
+<!-- Button to add a task -->
+<button kendoButton (click)="openAddTaskDialog()">Add Task</button>
+
+
+<!-- Kendo Dialog for Adding a Task -->
+<kendo-dialog *ngIf="isAddTaskDialogOpen">
+    <kendo-dialog-titlebar>
+      Add New Task
+    </kendo-dialog-titlebar>
+  
+    
+  </kendo-dialog>
