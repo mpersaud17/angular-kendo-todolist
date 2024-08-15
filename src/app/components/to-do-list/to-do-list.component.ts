@@ -3,10 +3,9 @@ import { ToDoItemComponent } from '../to-do-item/to-do-item.component';
 import { Observable } from 'rxjs';
 import { Item } from '../../models/item.model';
 import { TodoService } from '../../services/todo.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { formatDate } from '@angular/common';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 
 
@@ -50,12 +49,9 @@ export class ToDoListComponent {
   }
 
   addTask() {
-    // will need to call the todoService in here to update the array with the newly added task
-    // this.newTask.taskName=this.taskInput;
-    
     const newTask: Item = {
       id: Date.now(),
-      dueDate: this.taskForm.get('dueDate')?.value,
+      dueDate: formatDate(this.taskForm.get('dueDate')?.value, 'MM/dd/yyyy', 'en'),
       taskName: this.taskForm.get('taskName')?.value,
     };
 
