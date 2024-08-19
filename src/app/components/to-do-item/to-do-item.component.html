@@ -1,4 +1,5 @@
 <div class="todo-items">
   <h1 id="taskName">{{ item.taskName }}</h1>
   <h6 id="dueDate">Due Date: {{ item.dueDate }}</h6>
+  <button type="button" (click)="itemCompleted(item)">Complete</button>
 </div>

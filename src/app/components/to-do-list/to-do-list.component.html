@@ -2,6 +2,7 @@
 <app-to-do-items
   *ngFor="let item of toDoList | async"
   [item]="item"
+  (completedItemEvent) ="complete($event)"
 >
 </app-to-do-items>
 

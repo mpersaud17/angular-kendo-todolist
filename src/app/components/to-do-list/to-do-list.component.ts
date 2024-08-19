@@ -87,4 +87,9 @@ export class ToDoListComponent {
     this.taskForm.get('taskName')?.reset();
     this.taskForm.get('dueDate')?.reset();
   }
+
+  complete(compeltedItem: Item): void {
+    console.log('calling within the todolist component');
+    this.todoService.removeItem(compeltedItem);
+  }
 }

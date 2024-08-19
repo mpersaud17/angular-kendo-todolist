@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Item } from '../../models/item.model';
 
@@ -11,7 +11,10 @@ import { Item } from '../../models/item.model';
 })
 export class ToDoItemComponent {
   @Input() item!: Item;
+  @Output() completedItemEvent = new EventEmitter<Item>();
 
-  
-
+  public itemCompleted(item: Item): void {
+    console.log("from within the todo item componenet", item);
+    this.completedItemEvent.emit(item);
+  }
 }
