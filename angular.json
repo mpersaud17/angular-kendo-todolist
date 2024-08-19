@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               {
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },
@@ -93,6 +94,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               {
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },

@@ -12,10 +12,14 @@ export class TodoService {
   private itemsSubject: BehaviorSubject<Item[]> = new BehaviorSubject<Item[]>(data);
 
   public getItems(): Observable<Item[]>{
-    return this.itemsSubject;
+    return this.itemsSubject.asObservable();
   }
 
-  public addItems(newTask: Item): void {
+  public addItems(newTask: Item): boolean {
+  
+    // currently the items from the db.json file will be displayed along with the newly created task. But if we were to add multiple tasks, not all the tasks will be displayed.
+    // Because we are writing teh newly task to the db.json file. So it's only displaying whats written in the file and the new task we pass in.
     this.itemsSubject.next([...data, newTask]);
+    return true;
   }
 }

@@ -3,5 +3,4 @@ export interface Item {
   dueDate: string;
   taskName: string;
   completed: boolean; // New property to track completion
-
 }

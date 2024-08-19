@@ -12,10 +12,17 @@
 <kendo-dialog *ngIf="isAddTaskDialogOpen" (close)="closeAddTaskDialog()">
   <kendo-dialog-titlebar class="title"> Add New Task </kendo-dialog-titlebar>
 
-  <form id ="addTaskForm"[formGroup]="taskForm" (ngSubmit)="addTask()">
+  <form id ="addTaskForm" [formGroup]="taskForm" (ngSubmit)="addTask()">
     <label for="taskName">Task Name:</label>
     <input kendoTextBox id="taskName" formControlName="taskName" placeholder="Enter task name" required />
+
+    <!-- Error message to display if the taskName is not provided -->
+    <div *ngIf="taskForm.get('taskName')?.invalid && taskForm.get('taskName')?.touched" class="error">
+      Task name must be entered.
+    </div>
+
     <kendo-datepicker placeholder="Choose a date ..." formControlName="dueDate"></kendo-datepicker>
     <button kendoButton type="submit" [disabled]="taskForm.invalid">Add</button>
+
   </form>
 </kendo-dialog>
