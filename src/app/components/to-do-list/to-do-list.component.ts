@@ -69,7 +69,6 @@ export class ToDoListComponent {
         'en'
       ),
       taskName: this.taskForm.get('taskName')?.value,
-      completed: false,
     };
 
     if (this.todoService.addItems(newTask)) {

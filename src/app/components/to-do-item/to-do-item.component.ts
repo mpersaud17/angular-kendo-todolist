@@ -14,7 +14,7 @@ export class ToDoItemComponent {
   @Output() completedItemEvent = new EventEmitter<Item>();
 
   public itemCompleted(item: Item): void {
-    console.log("from within the todo item componenet", item);
+    // when the "Complete button is clicked - this event will be emitted"
     this.completedItemEvent.emit(item);
   }
 }
